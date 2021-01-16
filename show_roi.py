@@ -19,7 +19,7 @@ if __name__ == '__main__':
         
         for line in lines:
             box = line.split(",")
-            if os.path.basename(img) in line:
+            if os.path.basename(img) == box[0]:
                 cv2.rectangle(imgg,(int(box[4]),int(box[5])), (int(box[6]),int(box[7])),(0,255,0),1)
         
         cv2.imwrite(args.base + "/imgs_boxes/"+ os.path.basename(img), imgg)

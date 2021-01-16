@@ -89,7 +89,7 @@ def patch_labels_xml( fold_name, img_name, img_width, img_height, new_width=None
     for member in root.findall('object'):
         
         if new_width == None:
-            value = (root.find('filename').text, # filename
+            value = (root.find('filename').text.replace(".jpeg", ".jpg"), # filename
                     int(root.find('size')[0].text), # width
                     int(root.find('size')[1].text), # height
                     member[0].text, # class
@@ -100,7 +100,7 @@ def patch_labels_xml( fold_name, img_name, img_width, img_height, new_width=None
                     )
         else:
             resized_bbox = resize_bbox([float(member[4][0].text), float(member[4][1].text), float(member[4][2].text), float(member[4][3].text)], (int(root.find('size')[0].text),int(root.find('size')[1].text)), (new_width, new_height))
-            value = (root.find('filename').text, # filename
+            value = (root.find('filename').text.replace(".jpeg", ".jpg"), # filename
                     int(new_width), # width
                     int(new_height), # height
                     member[0].text, # class
