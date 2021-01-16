@@ -24,7 +24,6 @@ def resize_bbox(bbox, in_size, out_size):
     return bbox
     
     
-    
 def patch_labels_yolo( img_name, img_width, img_height, new_width, new_height):
     
     with open("labels_ok/" + img_name.replace(".jpg", "") +".txt") as f:
