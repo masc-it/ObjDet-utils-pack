@@ -1,6 +1,8 @@
-from PIL import Image
+from PIL import Image, ImageFile
 import os
 import argparse
+
+ImageFile.LOAD_TRUNCATED_IMAGES = True
 
 def rescale_images(directory, size):
     for img in os.listdir(directory):
