@@ -1,8 +1,9 @@
 # ObjDet-utils-pack
 
+## Notes before proceeding
 - Sometime paths are hard-coded (sorry), so you need to change them. (update coming soon)
 - update labelmap.pbtxt according to your labels
-- run setup_dataset.py -d dir_name
+- run _setup_dataset.py_ -d dir_name
 
 
 ## Notes for "generate_tf_record.py"
@@ -30,7 +31,7 @@ def class_text_to_int(row_label):
 echo. && echo "Build training/test csv and autoscale bboxes"
 build_csv.py -d F:\datasets\people\people_1 -m xml -s 300 300
 
-echo. && echo "Resizing train pics.."
+echo. && echo "Resizing train pics in a separate folder.."
 resize_images.py -d train/imgs_resized/ -s 300 300
 
 echo. && echo "Resizing test pics.."
